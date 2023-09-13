@@ -32,8 +32,8 @@ wandb_watch:
 wandb_run_id:
 wandb_log_model:
 
-gradient_accumulation_steps: 4
-micro_batch_size: 2
+gradient_accumulation_steps: 6
+micro_batch_size: 3
 num_epochs: 3
 optimizer: paged_adamw_32bit
 lr_scheduler: cosine
@@ -53,8 +53,8 @@ logging_steps: 1
 xformers_attention:
 flash_attention: false
 
-warmup_steps: 10
-eval_steps: 20
+warmup_steps: 100
+eval_steps: 200
 eval_table_size: 5
 save_steps:
 debug:
