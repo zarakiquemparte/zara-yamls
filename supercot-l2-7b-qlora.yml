@@ -37,7 +37,7 @@ micro_batch_size: 1
 num_epochs: 3
 optimizer: paged_adamw_32bit
 lr_scheduler: cosine
-learning_rate: 0.000065
+learning_rate: 0.0002
 
 train_on_inputs: false
 group_by_length: false
