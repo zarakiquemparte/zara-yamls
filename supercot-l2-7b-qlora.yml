@@ -53,8 +53,8 @@ logging_steps: 1
 xformers_attention:
 flash_attention: true
 
-warmup_steps: 200
-eval_steps: 400
+warmup_steps: 10
+eval_steps: 20
 eval_table_size: 5
 save_steps:
 debug:
