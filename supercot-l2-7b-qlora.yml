@@ -32,8 +32,8 @@ wandb_watch:
 wandb_run_id:
 wandb_log_model:
 
-gradient_accumulation_steps: 1
-micro_batch_size: 1
+gradient_accumulation_steps: 8
+micro_batch_size: 4
 num_epochs: 3
 optimizer: adamw_torch
 lr_scheduler: cosine
@@ -56,7 +56,7 @@ flash_attention: true
 warmup_steps: 10
 eval_steps: 20
 eval_table_size: 5
-save_steps: 500
+save_steps:
 debug:
 deepspeed:
 weight_decay: 0.0
