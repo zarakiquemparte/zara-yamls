@@ -20,9 +20,9 @@ sample_packing: false
 
 adapter: qlora
 lora_model_dir:
-lora_r: 32
+lora_r: 8
 lora_alpha: 16
-lora_dropout: 0.1
+lora_dropout: 0
 lora_target_linear: true
 lora_fan_in_fan_out:
 
@@ -32,18 +32,18 @@ wandb_watch:
 wandb_run_id:
 wandb_log_model:
 
-gradient_accumulation_steps: 8
-micro_batch_size: 4
+gradient_accumulation_steps: 1
+micro_batch_size: 1
 num_epochs: 3
-optimizer: paged_adamw_32bit
+optimizer: adamw_torch
 lr_scheduler: cosine
-learning_rate: 0.0002
+learning_rate: 0.00003
 
 train_on_inputs: false
 group_by_length: false
-bf16: false
-fp16: true
-tf32: false
+bf16: true
+fp16: false
+tf32: true
 
 gradient_checkpointing: true
 early_stopping_patience:
@@ -51,12 +51,12 @@ resume_from_checkpoint:
 local_rank:
 logging_steps: 1
 xformers_attention:
-flash_attention: false
+flash_attention: true
 
-warmup_steps: 100
-eval_steps: 200
+warmup_steps: 10
+eval_steps: 20
 eval_table_size: 5
-save_steps:
+save_steps: 500
 debug:
 deepspeed:
 weight_decay: 0.0
